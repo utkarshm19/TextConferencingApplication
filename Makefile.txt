@@ -1,0 +1,15 @@
+CC=gcc
+
+default: all
+
+all: client server
+client: client.o
+server: server.o
+client.o: client.c main.h
+	$(CC) -g -c client.c
+server.o: server.c main.h
+	$(CC) -g -c server.c
+
+clean:
+	rm -f *.o client server
+
